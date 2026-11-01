@@ -307,7 +307,8 @@ async function seed() {
         actorName: employee.name,
         actorRole: 'employee',
         employee: employee._id,
-        createdAt: new Date(day(plan.touched).getTime() + randInt(9, 18) * 3600 * 1000),
+        // Working-hours timestamp on that day, never later than now.
+        createdAt: new Date(Math.min(day(plan.touched).getTime() + randInt(9, 18) * 3600 * 1000, Date.now() - randInt(10, 120) * 60 * 1000)),
       });
     }
   }
