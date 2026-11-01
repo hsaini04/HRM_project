@@ -1,0 +1,201 @@
+// Proposed competency library for the prototype (Q2 framework) — not Lutron's official framework.
+// `key` is only used by the seed script to link records.
+
+export const competencies = [
+  // ── Core ──────────────────────────────────────────────────────────────
+  {
+    key: 'ps',
+    name: 'Problem-Solving & Analytical Thinking',
+    category: 'Core',
+    description: 'Analyses project or customer requirements, identifies constraints and proposes suitable, well-reasoned options.',
+    assessmentMethod: 'Design case study / scenario review',
+  },
+  {
+    key: 'co',
+    name: 'Customer Orientation',
+    category: 'Core',
+    description: 'Understands what the customer and project stakeholders need and keeps solutions focused on their outcomes.',
+    assessmentMethod: 'Customer/project feedback, manager review',
+  },
+  {
+    key: 'ct',
+    name: 'Collaboration & Teamwork',
+    category: 'Core',
+    description: 'Works constructively with colleagues, shares knowledge and supports team delivery.',
+    assessmentMethod: '360° peer feedback',
+  },
+  {
+    key: 'qd',
+    name: 'Quality & Detail Orientation',
+    category: 'Core',
+    description: 'Produces accurate, complete and checked work; catches errors before they reach customers or site.',
+    assessmentMethod: 'Work-sample / document quality review',
+  },
+  {
+    key: 'tla',
+    name: 'Technical Learning Agility',
+    category: 'Core',
+    description: 'Picks up new products, systems, software and smart-building technologies quickly and applies them on the job.',
+    assessmentMethod: 'Learning record + applied-task review',
+  },
+
+  // ── Functional: Lighting Design Specialist focus ─────────────────────
+  {
+    key: 'lf',
+    name: 'Lighting Fundamentals & Design Principles',
+    category: 'Functional',
+    description: 'Applies lighting fundamentals (illuminance, layering, glare, colour, daylight) to meet project requirements.',
+    assessmentMethod: 'Technical assessment / design sample',
+  },
+  {
+    key: 'lcs',
+    name: 'Lighting-Control & Shading Concepts',
+    category: 'Functional',
+    description: 'Understands dimming, scenes, sensors, scheduling and shading concepts relevant to a project and how they fit the design intent.',
+    assessmentMethod: 'Technical quiz + design review',
+  },
+  {
+    key: 'tools',
+    name: 'Lighting-Design, CAD/BIM & Documentation Tools',
+    category: 'Functional',
+    description: 'Uses the relevant lighting-calculation, CAD/BIM and documentation tools required by the role to prepare accurate outputs.',
+    assessmentMethod: 'Practical task / work sample',
+  },
+  {
+    key: 'dwg',
+    name: 'Reading Project Drawings & Specifications',
+    category: 'Functional',
+    description: 'Interprets architectural/electrical drawings, schedules and specifications and identifies what they mean for the design.',
+    assessmentMethod: 'Drawing-interpretation exercise',
+  },
+  {
+    key: 'est',
+    name: 'Design Estimation & Technical Documentation',
+    category: 'Functional',
+    description: 'Prepares quantity estimates, design notes and technical documentation that sales and engineering teams can rely on.',
+    assessmentMethod: 'Documentation audit / estimate accuracy check',
+  },
+  {
+    key: 'psc',
+    name: 'Project Stakeholder Coordination',
+    category: 'Functional',
+    description: 'Coordinates design inputs and changes with sales, applications, engineering and project stakeholders through the project lifecycle.',
+    assessmentMethod: 'Project feedback from sales & engineering',
+  },
+
+  // ── Functional: other representative roles ───────────────────────────
+  {
+    key: 'cfg',
+    name: 'Control-System Configuration & Commissioning Concepts',
+    category: 'Functional',
+    description: 'Understands how lighting-control systems are configured, tested and commissioned, and the information needed to do it correctly.',
+    assessmentMethod: 'Lab exercise / commissioning checklist review',
+  },
+  {
+    key: 'net',
+    name: 'Networking & Smart-Building Integration Basics',
+    category: 'Functional',
+    description: 'Understands IP networking basics and how control systems integrate with building-management and other smart-building systems.',
+    assessmentMethod: 'Online assessment + practical scenario',
+  },
+  {
+    key: 'demo',
+    name: 'Technical Product Demonstration',
+    category: 'Functional',
+    description: 'Demonstrates system capabilities clearly and accurately, linking features to the customer’s project needs.',
+    assessmentMethod: 'Observed demonstration',
+  },
+  {
+    key: 'scope',
+    name: 'Solution Scoping & Proposal Support',
+    category: 'Functional',
+    description: 'Translates customer requirements into a scoped solution and supports technically sound proposals.',
+    assessmentMethod: 'Proposal review',
+  },
+  {
+    key: 'ts',
+    name: 'Technical Troubleshooting & Issue Resolution',
+    category: 'Functional',
+    description: 'Diagnoses system or project issues methodically and resolves them or escalates with complete information.',
+    assessmentMethod: 'Case review / troubleshooting simulation',
+  },
+  {
+    key: 'svc',
+    name: 'Service Process & Case Management',
+    category: 'Functional',
+    description: 'Logs, prioritises and follows up service cases and project requests so nothing is lost and customers are kept informed.',
+    assessmentMethod: 'Case-quality audit',
+  },
+  {
+    key: 'sell',
+    name: 'Consultative Selling & Opportunity Development',
+    category: 'Functional',
+    description: 'Builds customer relationships, qualifies opportunities and positions technical solutions around customer value.',
+    assessmentMethod: 'Pipeline review / role-play',
+  },
+  {
+    key: 'sec',
+    name: 'IT Security & Access Management',
+    category: 'Functional',
+    description: 'Applies security practices for devices, accounts and access, and supports secure use of business systems.',
+    assessmentMethod: 'Security assessment / audit findings',
+  },
+  {
+    key: 'proc',
+    name: 'Business Process & Compliance (HR, Finance, Admin)',
+    category: 'Functional',
+    description: 'Runs enabling processes accurately and in line with policy, data-protection and compliance requirements.',
+    assessmentMethod: 'Process audit / manager review',
+  },
+
+  // ── Behavioural ──────────────────────────────────────────────────────
+  {
+    key: 'comm',
+    name: 'Clear Communication & Presentation',
+    category: 'Behavioural',
+    description: 'Explains technical and design decisions clearly to internal and external stakeholders, in writing and in presentations.',
+    assessmentMethod: 'Presentation / manager feedback',
+  },
+  {
+    key: 'stk',
+    name: 'Stakeholder Management',
+    category: 'Behavioural',
+    description: 'Manages expectations, negotiates priorities and maintains trust with customers, consultants and internal teams.',
+    assessmentMethod: 'Stakeholder feedback',
+  },
+  {
+    key: 'xfc',
+    name: 'Cross-Functional Coordination',
+    category: 'Behavioural',
+    description: 'Works across sales, design, applications, engineering, service and global teams to move work forward.',
+    assessmentMethod: 'Project feedback / 360° review',
+  },
+  {
+    key: 'tpm',
+    name: 'Time & Priority Management',
+    category: 'Behavioural',
+    description: 'Plans work, meets deadlines and re-prioritises sensibly when project demands change.',
+    assessmentMethod: 'Delivery-timeliness review',
+  },
+  {
+    key: 'adapt',
+    name: 'Adaptability & Continuous Learning',
+    category: 'Behavioural',
+    description: 'Responds positively to change and keeps skills current beyond induction through structured learning.',
+    assessmentMethod: 'Learning-plan review',
+  },
+  {
+    key: 'own',
+    name: 'Ownership & Reliability',
+    category: 'Behavioural',
+    description: 'Takes responsibility for outcomes, follows through on commitments and acts professionally.',
+    assessmentMethod: 'Manager review',
+  },
+  {
+    key: 'lead',
+    name: 'People Leadership & Coaching',
+    category: 'Behavioural',
+    description: 'Guides, mentors and develops others; shares specialist knowledge so it is retained in the team.',
+    assessmentMethod: 'Mentee feedback / leadership review',
+  },
+];

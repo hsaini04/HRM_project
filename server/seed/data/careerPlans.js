@@ -1,0 +1,112 @@
+// Illustrative individual development plans. Target roles follow the proposed career tracks,
+// not Lutron's confirmed promotion policy. `offset` values are days relative to the seed date.
+
+export const careerPlans = [
+  {
+    employee: 'DEMO-1007',
+    targetRole: 'Senior Lighting Design Specialist',
+    mentor: 'DEMO-1010',
+    reviewIn: 60,
+    notes: 'Strong design fundamentals; focus on estimation accuracy and controls/shading depth before the next review.',
+    trainings: [
+      'Lighting-Control & Shading Concepts for Project Design',
+      'CAD/BIM & Lighting-Documentation Practice Lab',
+      'Design Estimation & Technical Documentation Clinic',
+      'Client Communication & Presentation Skills',
+    ],
+    goals: [
+      { title: 'Complete the Lighting Fundamentals refresher', competency: 'lf', offset: -40, status: 'Achieved' },
+      { title: 'Reach Proficient (3) in design estimation & documentation', competency: 'est', offset: 75, status: 'In Progress' },
+      { title: 'Apply controls & shading concepts on two project designs', competency: 'lcs', offset: 45, status: 'In Progress' },
+      { title: 'Present a design review to sales and applications teams', competency: 'comm', offset: 50, status: 'Not Started' },
+      { title: 'Lead the design package for one mid-size project', competency: 'psc', offset: 120, status: 'Not Started' },
+    ],
+  },
+  {
+    employee: 'DEMO-1009',
+    targetRole: 'Lighting Design Specialist',
+    mentor: 'DEMO-1008',
+    reviewIn: 45,
+    notes: 'Early-career designer; building drawing-interpretation and documentation skills through shadowing.',
+    trainings: ['Reading Construction Drawings & Specifications', 'Project Shadowing: Design to Commissioning'],
+    goals: [
+      { title: 'Interpret drawings and specifications independently', competency: 'dwg', offset: 40, status: 'In Progress' },
+      { title: 'Complete one project shadowing cycle', competency: 'psc', offset: 90, status: 'Not Started' },
+      { title: 'Produce a complete documentation set with minimal review comments', competency: 'tools', offset: 100, status: 'Not Started' },
+    ],
+  },
+  {
+    employee: 'DEMO-1010',
+    targetRole: 'Design Lead',
+    mentor: 'DEMO-1001',
+    reviewIn: 90,
+    notes: 'Retention focus: recognise expertise through mentoring responsibilities and visible design-quality leadership.',
+    trainings: ['Mentoring & Coaching for Senior Specialists'],
+    goals: [
+      { title: 'Mentor two designers through a full project cycle', competency: 'lead', offset: 120, status: 'In Progress' },
+      { title: 'Run a monthly design-review knowledge session', competency: 'comm', offset: 30, status: 'Achieved' },
+      { title: 'Define a design-quality checklist for the team', competency: 'qd', offset: 75, status: 'Not Started' },
+    ],
+  },
+  {
+    employee: 'DEMO-1011',
+    targetRole: 'Senior Applications Engineer',
+    mentor: 'DEMO-1013',
+    reviewIn: 70,
+    notes: 'Build integration depth and begin guiding associate engineers.',
+    trainings: ['Control-System Configuration & Commissioning Lab', 'Networking Essentials for Smart-Building Systems'],
+    goals: [
+      { title: 'Lead commissioning preparation for a multi-floor project', competency: 'cfg', offset: 80, status: 'In Progress' },
+      { title: 'Document a smart-building integration case study', competency: 'net', offset: 60, status: 'Not Started' },
+    ],
+  },
+  {
+    employee: 'DEMO-1012',
+    targetRole: 'Applications Engineer',
+    mentor: 'DEMO-1013',
+    reviewIn: 50,
+    notes: 'Newer associate — prioritise networking basics and commissioning exposure.',
+    trainings: ['Networking Essentials for Smart-Building Systems', 'Project Shadowing: Design to Commissioning'],
+    goals: [
+      { title: 'Pass the networking essentials assessment', competency: 'net', offset: 35, status: 'In Progress' },
+      { title: 'Shadow two commissioning visits', competency: 'cfg', offset: 70, status: 'Not Started' },
+      { title: 'Prepare system documentation for a small project', competency: 'dwg', offset: 95, status: 'Not Started' },
+    ],
+  },
+  {
+    employee: 'DEMO-1014',
+    targetRole: 'Senior System Sales Engineer',
+    mentor: 'DEMO-1015',
+    reviewIn: 65,
+    notes: 'Strengthen demonstrations and solution scoping for larger opportunities.',
+    trainings: ['Technical Product Demonstration Skills', 'Consultative Selling for Technical Solutions'],
+    goals: [
+      { title: 'Deliver three observed customer demonstrations', competency: 'demo', offset: 55, status: 'In Progress' },
+      { title: 'Own technical scoping on one large proposal', competency: 'scope', offset: 100, status: 'Not Started' },
+    ],
+  },
+  {
+    employee: 'DEMO-1018',
+    targetRole: 'Senior Support Specialist',
+    mentor: 'DEMO-1017',
+    reviewIn: 40,
+    notes: 'Develop troubleshooting depth and case ownership.',
+    trainings: ['Structured Troubleshooting & Case Resolution', 'Client Communication & Presentation Skills'],
+    goals: [
+      { title: 'Resolve level-2 cases with complete diagnostic notes', competency: 'ts', offset: 45, status: 'In Progress' },
+      { title: 'Achieve case-quality audit score above target', competency: 'svc', offset: 60, status: 'Not Started' },
+    ],
+  },
+  {
+    employee: 'DEMO-1021',
+    targetRole: 'Key Account Manager',
+    mentor: 'DEMO-1020',
+    reviewIn: 80,
+    notes: 'Build consultative selling skills and technical confidence with specifiers.',
+    trainings: ['Consultative Selling for Technical Solutions', 'Technical Product Demonstration Skills'],
+    goals: [
+      { title: 'Qualify and develop five new specifier opportunities', competency: 'sell', offset: 90, status: 'In Progress' },
+      { title: 'Co-deliver a demonstration with system sales engineering', competency: 'demo', offset: 40, status: 'Not Started' },
+    ],
+  },
+];
