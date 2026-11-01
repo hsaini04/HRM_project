@@ -29,7 +29,8 @@ export function createApp() {
   // Optional: serve the built React app (after `npm run build`) from the same origin.
   if (existsSync(clientDist)) {
     app.use(express.static(clientDist));
-    app.get(/^\/(?!api\/).*/, (req, res) => res.sendFile(path.join(clientDist, 'index.html')));
+    // `root` keeps the dot-file check to index.html itself, so a checkout under a dot-folder still works.
+    app.get(/^\/(?!api\/).*/, (req, res) => res.sendFile('index.html', { root: clientDist }));
   }
 
   app.use(notFoundHandler);

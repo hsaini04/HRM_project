@@ -40,6 +40,10 @@ export function errorHandler(err, req, res, next) {
   } else if (err?.type === 'entity.too.large') {
     status = 413;
     message = 'Request body is too large';
+  } else if (err?.status >= 400 && err.status < 500) {
+    // Other client errors raised by Express internals (e.g. static file lookups).
+    status = err.status;
+    message = err.expose ? err.message : 'Request could not be processed';
   }
 
   if (status >= 500 && !isTest) console.error(err);
