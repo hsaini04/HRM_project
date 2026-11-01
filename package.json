@@ -1,0 +1,18 @@
+{
+  "name": "lutron-skillbridge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Employee Training & Skill Development System — HRM-203 CA-2 academic prototype (synthetic demo data only).",
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "seed": "npm --prefix server run seed",
+    "dev:api": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "start": "npm --prefix server start",
+    "test": "npm --prefix server test"
+  },
+  "engines": {
+    "node": ">=20.19"
+  }
+}
