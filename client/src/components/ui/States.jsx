@@ -63,7 +63,7 @@ export function EmptyState({ icon: Icon = Inbox, title, description, action, cla
 export function ErrorState({ error, onRetry, className = '' }) {
   return (
     <div role="alert" className={`flex flex-col items-center justify-center px-6 py-12 text-center ${className}`}>
-      <span className="mb-3 grid size-11 place-items-center rounded-full bg-red-50 text-red-600">
+      <span className="mb-3 grid size-11 place-items-center rounded-full bg-red-50 text-red-700">
         <ServerCrash className="size-5" aria-hidden="true" />
       </span>
       <p className="text-sm font-semibold text-slate-900">Couldn’t load this data</p>

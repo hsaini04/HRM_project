@@ -230,7 +230,7 @@ export function CareerPlanFormModal({ open, onClose, plan, excludeEmployeeIds = 
               </li>
             ))}
           </ul>
-          {errors.goals && <p className="mt-2 text-xs font-medium text-red-600">{errors.goals}</p>}
+          {errors.goals && <p className="mt-2 text-xs font-medium text-red-700">{errors.goals}</p>}
         </div>
       </form>
     </Modal>

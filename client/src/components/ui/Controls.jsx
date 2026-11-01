@@ -41,7 +41,7 @@ export function SegmentedControl({ options, value, onChange, label, className = 
             aria-selected={active}
             onClick={() => onChange(option.value)}
             className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-colors ${
-              active ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-900'
+              active ? 'bg-raised text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             {option.label}

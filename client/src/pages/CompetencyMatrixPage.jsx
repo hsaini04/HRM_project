@@ -134,7 +134,7 @@ function RoleFramework({ jobTitle, onRoleChange }) {
               if (!rows.length) return null;
               return (
                 <tbody key={category} className="divide-y divide-line border-b border-line">
-                  <tr className="bg-white">
+                  <tr className="bg-surface">
                     <td colSpan={3 + employees.length} className="sticky left-0 px-5 pt-4 pb-2">
                       <div className="flex items-center gap-2">
                         <CategoryBadge category={category} />
@@ -144,7 +144,7 @@ function RoleFramework({ jobTitle, onRoleChange }) {
                   </tr>
                   {rows.map((competency) => (
                     <tr key={competency._id} className="align-middle hover:bg-slate-50/60">
-                      <td className="sticky left-0 z-10 max-w-sm bg-white px-5 py-3">
+                      <td className="sticky left-0 z-10 max-w-sm bg-surface px-5 py-3">
                         <p className="font-medium text-slate-800">{competency.name}</p>
                         <p className="mt-0.5 text-xs text-slate-500">{competency.description}</p>
                       </td>

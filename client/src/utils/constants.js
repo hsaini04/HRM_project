@@ -8,11 +8,11 @@ export const STATUS_META = {
   Overdue: { icon: TriangleAlert, badge: 'bg-red-50 text-red-700 ring-red-600/20', chart: '#d03b3b' },
 };
 
-// Gap severity — an ordinal single-hue ramp (validated light → dark).
+// Gap severity — an ordinal single-hue ramp, validated per theme (see --chart-sev-* in index.css).
 export const SEVERITY_META = {
-  Moderate: { level: 1, badge: 'bg-orange-50 text-orange-800 ring-orange-600/20', chart: '#f0a072' },
-  High: { level: 2, badge: 'bg-orange-100 text-orange-900 ring-orange-700/25', chart: '#e0622f' },
-  Critical: { level: 3, badge: 'bg-red-100 text-red-900 ring-red-700/25', chart: '#a63a17' },
+  Moderate: { level: 1, badge: 'bg-orange-50 text-orange-800 ring-orange-600/20', chart: 'var(--chart-sev-1)' },
+  High: { level: 2, badge: 'bg-orange-100 text-orange-900 ring-orange-700/25', chart: 'var(--chart-sev-2)' },
+  Critical: { level: 3, badge: 'bg-red-100 text-red-900 ring-red-700/25', chart: 'var(--chart-sev-3)' },
 };
 
 export const CATEGORY_META = {

@@ -67,7 +67,7 @@ function CompletionByDepartment({ rows }) {
           <CartesianGrid horizontal={false} stroke={CHART.grid} />
           <XAxis type="number" allowDecimals={false} {...axisProps} />
           <YAxis type="category" dataKey="name" width={140} {...axisProps} axisLine={false} />
-          <Tooltip cursor={{ fill: '#f3f4f7' }} content={<ChartTooltip labelFormatter={(label, payload) => payload?.[0]?.payload?.department || label} />} />
+          <Tooltip cursor={{ fill: CHART.cursor }} content={<ChartTooltip labelFormatter={(label, payload) => payload?.[0]?.payload?.department || label} />} />
           {STATUS_ORDER.map(([key, label], index) => (
             <Bar
               key={key}
@@ -82,7 +82,7 @@ function CompletionByDepartment({ rows }) {
               isAnimationActive={chartAnimation()}
             >
               {index === STATUS_ORDER.length - 1 && (
-                <LabelList dataKey="completionRate" position="right" formatter={(value) => `${value}% done`} style={{ fill: '#334155', fontSize: 11, fontWeight: 500 }} />
+                <LabelList dataKey="completionRate" position="right" formatter={(value) => `${value}% done`} style={{ fill: CHART.label, fontSize: 11, fontWeight: 500 }} />
               )}
             </Bar>
           ))}
@@ -116,7 +116,7 @@ function ParticipationChart({ rows }) {
           <XAxis type="number" domain={[0, 100]} tickFormatter={percent} {...axisProps} />
           <YAxis type="category" dataKey="name" width={140} {...axisProps} axisLine={false} />
           <Tooltip
-            cursor={{ fill: '#f3f4f7' }}
+            cursor={{ fill: CHART.cursor }}
             content={<ChartTooltip valueFormatter={(value, entry) => `${value}% (${entry.payload.participants}/${entry.payload.employees})`} labelFormatter={(label, payload) => payload?.[0]?.payload?.department || label} />}
           />
           <Bar dataKey="participationRate" name="Participation" fill={CHART.series} maxBarSize={22} radius={[0, 4, 4, 0]} isAnimationActive={chartAnimation()}>
@@ -124,7 +124,7 @@ function ParticipationChart({ rows }) {
               dataKey="participants"
               position="right"
               content={({ x, y, width, height, index }) => (
-                <text x={x + width + 6} y={y + height / 2} dy={4} fontSize={11} fill="#334155" fontWeight={500}>
+                <text x={x + width + 6} y={y + height / 2} dy={4} fontSize={11} fill={CHART.label} fontWeight={500}>
                   {data[index].participants}/{data[index].employees}
                 </text>
               )}
@@ -208,7 +208,7 @@ function FrequentGaps({ rows }) {
           <XAxis type="number" allowDecimals={false} {...axisProps} />
           <YAxis type="category" dataKey="label" width={210} {...axisProps} axisLine={false} />
           <Tooltip
-            cursor={{ fill: '#f3f4f7' }}
+            cursor={{ fill: CHART.cursor }}
             content={<ChartTooltip valueFormatter={(value, entry) => `${value} of ${entry.payload.assessedEmployees} assessed (${entry.payload.gapRate}%)`} />}
           />
           <Bar dataKey="employeesAffected" name="Employees with gap" fill={SEVERITY_META.High.chart} maxBarSize={22} radius={[0, 4, 4, 0]} isAnimationActive={chartAnimation()}>
@@ -216,7 +216,7 @@ function FrequentGaps({ rows }) {
               dataKey="employeesAffected"
               position="right"
               content={({ x, y, width, height, index }) => (
-                <text x={x + width + 6} y={y + height / 2} dy={4} fontSize={11} fill="#334155" fontWeight={500}>
+                <text x={x + width + 6} y={y + height / 2} dy={4} fontSize={11} fill={CHART.label} fontWeight={500}>
                   {data[index].employeesAffected} · {data[index].gapRate}%
                 </text>
               )}
@@ -249,9 +249,9 @@ function ProgressByRole({ rows }) {
           <CartesianGrid horizontal={false} stroke={CHART.grid} />
           <XAxis type="number" domain={[0, 100]} tickFormatter={percent} {...axisProps} />
           <YAxis type="category" dataKey="jobTitle" width={210} {...axisProps} axisLine={false} />
-          <Tooltip cursor={{ fill: '#f3f4f7' }} content={<ChartTooltip valueFormatter={(value, entry) => `${value}% · ${entry.payload.enrollments} assignments`} />} />
+          <Tooltip cursor={{ fill: CHART.cursor }} content={<ChartTooltip valueFormatter={(value, entry) => `${value}% · ${entry.payload.enrollments} assignments`} />} />
           <Bar dataKey="averageProgress" name="Average progress" fill={CHART.series} maxBarSize={18} radius={[0, 4, 4, 0]} isAnimationActive={chartAnimation()}>
-            <LabelList dataKey="averageProgress" position="right" formatter={(value) => `${Math.round(value)}%`} style={{ fill: '#334155', fontSize: 11, fontWeight: 500 }} />
+            <LabelList dataKey="averageProgress" position="right" formatter={(value) => `${Math.round(value)}%`} style={{ fill: CHART.label, fontSize: 11, fontWeight: 500 }} />
           </Bar>
         </BarChart>
       </ResponsiveContainer>
@@ -283,12 +283,12 @@ function DeliveryMix({ rows }) {
           <CartesianGrid vertical={false} stroke={CHART.grid} />
           <XAxis dataKey="mode" {...axisProps} />
           <YAxis allowDecimals={false} {...axisProps} axisLine={false} />
-          <Tooltip cursor={{ fill: '#f3f4f7' }} content={<ChartTooltip />} />
+          <Tooltip cursor={{ fill: CHART.cursor }} content={<ChartTooltip />} />
           <Bar dataKey="enrollments" name="Assigned" fill={SERIES.assigned} maxBarSize={24} radius={[4, 4, 0, 0]} isAnimationActive={chartAnimation()}>
-            <LabelList dataKey="enrollments" position="top" style={{ fill: '#334155', fontSize: 11 }} />
+            <LabelList dataKey="enrollments" position="top" style={{ fill: CHART.label, fontSize: 11 }} />
           </Bar>
           <Bar dataKey="completed" name="Completed" fill={SERIES.completed} maxBarSize={24} radius={[4, 4, 0, 0]} isAnimationActive={chartAnimation()}>
-            <LabelList dataKey="completed" position="top" style={{ fill: '#334155', fontSize: 11 }} />
+            <LabelList dataKey="completed" position="top" style={{ fill: CHART.label, fontSize: 11 }} />
           </Bar>
         </BarChart>
       </ResponsiveContainer>
@@ -378,7 +378,7 @@ export default function AnalyticsPage() {
                     </span>
                   </div>
                   <div className="h-2 overflow-hidden rounded-full bg-slate-100">
-                    <div className="h-full rounded-full bg-[#f0a072]" style={{ width: `${(row.gaps / Math.max(1, ...data.gapsByCategory.map((item) => item.gaps))) * 100}%` }} />
+                    <div className="h-full rounded-full bg-(--chart-sev-1)" style={{ width: `${(row.gaps / Math.max(1, ...data.gapsByCategory.map((item) => item.gaps))) * 100}%` }} />
                   </div>
                 </li>
               ))}

@@ -161,7 +161,7 @@ export function CompetencyFormModal({ open, onClose, competency, defaultRole, on
               Not linked to any role yet. Add the roles that need this competency and their expected level.
             </p>
           )}
-          {errors.roleRequirements && <p className="mt-1.5 text-xs font-medium text-red-600">{errors.roleRequirements}</p>}
+          {errors.roleRequirements && <p className="mt-1.5 text-xs font-medium text-red-700">{errors.roleRequirements}</p>}
           {isEdit && <p className="mt-2 text-xs text-slate-500">Changing expected levels recalculates existing employees’ gaps.</p>}
         </div>
       </form>

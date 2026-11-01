@@ -64,7 +64,7 @@ function GapsByCompetencyChart({ rows }) {
           <CartesianGrid horizontal={false} stroke={CHART.grid} />
           <XAxis type="number" allowDecimals={false} {...axisProps} />
           <YAxis type="category" dataKey="name" width={210} {...axisProps} axisLine={false} tick={{ ...axisProps.tick, width: 200 }} />
-          <Tooltip cursor={{ fill: '#f3f4f7' }} content={<ChartTooltip valueFormatter={(value) => `${value} employee${value === 1 ? '' : 's'}`} />} />
+          <Tooltip cursor={{ fill: CHART.cursor }} content={<ChartTooltip valueFormatter={(value) => `${value} employee${value === 1 ? '' : 's'}`} />} />
           <Bar dataKey="Moderate" stackId="g" fill={SEVERITY_META.Moderate.chart} stroke={CHART.surface} strokeWidth={2} maxBarSize={22} isAnimationActive={chartAnimation()} />
           <Bar dataKey="High / critical" stackId="g" fill={SEVERITY_META.High.chart} stroke={CHART.surface} strokeWidth={2} maxBarSize={22} radius={[0, 4, 4, 0]} isAnimationActive={chartAnimation()} />
         </BarChart>

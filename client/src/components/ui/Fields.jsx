@@ -7,12 +7,12 @@ export function Field({ label, error, hint, required, children, className = '', 
       {label && (
         <label htmlFor={htmlFor} className="label">
           {label}
-          {required && <span className="ml-0.5 text-red-600" aria-hidden="true">*</span>}
+          {required && <span className="ml-0.5 text-red-700" aria-hidden="true">*</span>}
         </label>
       )}
       {children}
       {error ? (
-        <p className="mt-1.5 text-xs font-medium text-red-600" role="alert">
+        <p className="mt-1.5 text-xs font-medium text-red-700" role="alert">
           {error}
         </p>
       ) : (
@@ -107,7 +107,7 @@ export function CheckboxList({ label, error, hint, required, options, value = []
 
   return (
     <Field label={label} error={error} hint={hint} required={required} htmlFor={id}>
-      <div className={`overflow-hidden rounded-lg border ${error ? 'border-red-400' : 'border-slate-300'} bg-white`}>
+      <div className={`overflow-hidden rounded-lg border ${error ? 'border-red-400' : 'border-slate-300'} bg-surface`}>
         <div className="flex items-center gap-2 border-b border-line px-3 py-2">
           <Search className="size-4 text-slate-400" aria-hidden="true" />
           <input
@@ -132,7 +132,7 @@ export function CheckboxList({ label, error, hint, required, options, value = []
                   >
                     <input type="checkbox" className="peer sr-only" checked={checked} onChange={() => toggle(option.value)} />
                     <span
-                      className={`mt-0.5 grid size-4 shrink-0 place-items-center rounded border transition-colors peer-focus-visible:ring-2 peer-focus-visible:ring-brand-300 ${checked ? 'border-brand-600 bg-brand-600 text-white' : 'border-slate-300 bg-white'}`}
+                      className={`mt-0.5 grid size-4 shrink-0 place-items-center rounded border transition-colors peer-focus-visible:ring-2 peer-focus-visible:ring-brand-300 ${checked ? 'border-brand-600 bg-brand-600 text-white' : 'border-slate-300 bg-surface'}`}
                     >
                       {checked && <Check className="size-3" strokeWidth={3} />}
                     </span>

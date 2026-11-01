@@ -126,14 +126,14 @@ export function ProgressModal({ enrollment, open, onClose, onSaved }) {
                 type="button"
                 onClick={() => setProgress(value)}
                 className={`rounded-md px-2.5 py-1 text-xs font-medium ring-1 ring-inset transition-colors ${
-                  progress === value ? 'bg-brand-600 text-white ring-brand-600' : 'bg-white text-slate-600 ring-slate-300 hover:bg-slate-50'
+                  progress === value ? 'bg-brand-600 text-white ring-brand-600' : 'bg-surface text-slate-600 ring-slate-300 hover:bg-slate-50'
                 }`}
               >
                 {value}%
               </button>
             ))}
           </div>
-          {errors.progress && <p className="mt-1.5 text-xs font-medium text-red-600">{errors.progress}</p>}
+          {errors.progress && <p className="mt-1.5 text-xs font-medium text-red-700">{errors.progress}</p>}
         </div>
 
         <div className="rounded-lg border border-line p-3">

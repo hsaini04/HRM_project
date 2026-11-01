@@ -51,7 +51,7 @@ function StatusChart({ data, total }) {
           <CartesianGrid horizontal={false} stroke={CHART.grid} />
           <XAxis type="number" allowDecimals={false} {...axisProps} />
           <YAxis type="category" dataKey="status" width={92} {...axisProps} axisLine={false} />
-          <Tooltip cursor={{ fill: '#f3f4f7' }} content={<ChartTooltip valueFormatter={(value) => `${value} assignments`} />} />
+          <Tooltip cursor={{ fill: CHART.cursor }} content={<ChartTooltip valueFormatter={(value) => `${value} assignments`} />} />
           <Bar dataKey="count" name="Assignments" maxBarSize={24} radius={[0, 4, 4, 0]} isAnimationActive={chartAnimation()}>
             {rows.map((row) => (
               <Cell key={row.status} fill={STATUS_META[row.status].chart} />
@@ -60,7 +60,7 @@ function StatusChart({ data, total }) {
               dataKey="count"
               position="right"
               formatter={(value) => `${value} (${total ? Math.round((value / total) * 100) : 0}%)`}
-              style={{ fill: '#334155', fontSize: 12, fontWeight: 500 }}
+              style={{ fill: CHART.label, fontSize: 12, fontWeight: 500 }}
             />
           </Bar>
         </BarChart>
@@ -96,7 +96,7 @@ function GapsByDepartmentChart({ data }) {
             <CartesianGrid horizontal={false} stroke={CHART.grid} />
             <XAxis type="number" allowDecimals={false} {...axisProps} />
             <YAxis type="category" dataKey="name" width={170} {...axisProps} axisLine={false} />
-            <Tooltip cursor={{ fill: '#f3f4f7' }} content={<ChartTooltip labelFormatter={(label, payload) => payload?.[0]?.payload?.department || label} />} />
+            <Tooltip cursor={{ fill: CHART.cursor }} content={<ChartTooltip labelFormatter={(label, payload) => payload?.[0]?.payload?.department || label} />} />
             {severities.map((severity, index) => (
               <Bar
                 key={severity}

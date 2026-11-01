@@ -10,6 +10,7 @@ import { dashboardApi, employeesApi, trainingsApi } from '../../services/resourc
 import { dueLabel, formatShortDate } from '../../utils/format.js';
 import { Avatar } from '../ui/Controls.jsx';
 import { pageTitle } from './navigation.js';
+import { ThemeToggle } from './ThemeToggle.jsx';
 
 function GlobalSearch() {
   const { can } = useDemo();
@@ -61,7 +62,7 @@ function GlobalSearch() {
         className="input h-9 bg-slate-50 py-1.5 pl-9 [&::-webkit-search-cancel-button]:hidden"
       />
       {open && term.length >= 2 && (
-        <div className="absolute top-11 right-0 left-0 z-40 overflow-hidden rounded-xl border border-line bg-white shadow-pop">
+        <div className="absolute top-11 right-0 left-0 z-40 overflow-hidden rounded-xl border border-line bg-surface shadow-pop">
           {loading && !results.length ? (
             <p className="px-4 py-3 text-sm text-slate-500">Searching…</p>
           ) : results.length ? (
@@ -132,7 +133,7 @@ function Notifications() {
         )}
       </button>
       {open && (
-        <div className="absolute top-11 right-0 z-40 w-[22rem] max-w-[calc(100vw-2rem)] overflow-hidden rounded-xl border border-line bg-white shadow-pop">
+        <div className="absolute top-11 right-0 z-40 w-[22rem] max-w-[calc(100vw-2rem)] overflow-hidden rounded-xl border border-line bg-surface shadow-pop">
           <div className="border-b border-line px-4 py-3">
             <p className="text-sm font-semibold text-slate-900">Learning alerts</p>
             <p className="text-xs text-slate-500">
@@ -150,9 +151,9 @@ function Notifications() {
                     className="flex gap-3 px-4 py-3 hover:bg-slate-50"
                   >
                     {alert.type === 'overdue' ? (
-                      <TriangleAlert className="mt-0.5 size-4 shrink-0 text-red-600" aria-hidden="true" />
+                      <TriangleAlert className="mt-0.5 size-4 shrink-0 text-red-700" aria-hidden="true" />
                     ) : (
-                      <CalendarClock className="mt-0.5 size-4 shrink-0 text-brand-600" aria-hidden="true" />
+                      <CalendarClock className="mt-0.5 size-4 shrink-0 text-brand-700" aria-hidden="true" />
                     )}
                     <span className="min-w-0 text-sm">
                       <span className="block truncate font-medium text-slate-900">{alert.program?.title}</span>
@@ -207,7 +208,7 @@ function ProfileMenu() {
         <ChevronDown className="size-4 text-slate-400" aria-hidden="true" />
       </button>
       {open && (
-        <div role="menu" className="absolute top-12 right-0 z-40 w-72 overflow-hidden rounded-xl border border-line bg-white shadow-pop">
+        <div role="menu" className="absolute top-12 right-0 z-40 w-72 overflow-hidden rounded-xl border border-line bg-surface shadow-pop">
           <div className="border-b border-line px-4 py-3">
             <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase">Demo role</p>
             <p className="mt-0.5 text-xs text-slate-500">Switch persona to see each user’s view.</p>
@@ -231,7 +232,7 @@ function ProfileMenu() {
                         {persona.employee.name} · {persona.employee.jobTitle}
                       </span>
                     </span>
-                    {persona.role === session.role && <Check className="size-4 text-brand-600" aria-hidden="true" />}
+                    {persona.role === session.role && <Check className="size-4 text-brand-700" aria-hidden="true" />}
                   </button>
                 </li>
               ))}
@@ -261,7 +262,7 @@ export function Topbar({ onMenu }) {
   }, [title]);
 
   return (
-    <header className="sticky top-0 z-20 flex h-16 items-center gap-3 border-b border-line bg-white/90 px-4 backdrop-blur sm:px-6">
+    <header className="sticky top-0 z-20 flex h-16 items-center gap-3 border-b border-line bg-surface/90 px-4 backdrop-blur sm:px-6">
       <button
         type="button"
         onClick={onMenu}
@@ -275,6 +276,7 @@ export function Topbar({ onMenu }) {
         <p className="hidden truncate text-xs text-slate-500 sm:block">Lutron Electronics (India) · Gurugram office — simulated environment</p>
       </div>
       <GlobalSearch />
+      <ThemeToggle />
       <Notifications />
       <ProfileMenu />
     </header>

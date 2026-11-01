@@ -33,7 +33,7 @@ function NavList({ onNavigate }) {
                     <>
                       {isActive && <span className="absolute top-1.5 bottom-1.5 left-0 w-[3px] rounded-r-full bg-brand-600" aria-hidden="true" />}
                       <item.icon
-                        className={`size-[18px] shrink-0 ${isActive ? 'text-brand-600' : 'text-slate-400 group-hover:text-slate-600'}`}
+                        className={`size-[18px] shrink-0 ${isActive ? 'text-brand-700' : 'text-slate-400 group-hover:text-slate-600'}`}
                         aria-hidden="true"
                       />
                       {item.label}
@@ -69,7 +69,7 @@ function SidebarFooter({ onNavigate }) {
 
 export function Sidebar() {
   return (
-    <aside className="fixed inset-y-0 left-0 z-30 hidden w-64 flex-col border-r border-line bg-white lg:flex">
+    <aside className="fixed inset-y-0 left-0 z-30 hidden w-64 flex-col border-r border-line bg-surface lg:flex">
       <div className="flex h-16 shrink-0 items-center border-b border-line px-5">
         <Logo />
       </div>
@@ -101,10 +101,10 @@ export function MobileSidebar({ open, onClose }) {
   if (!rendered) return null;
   return createPortal(
     <div className="fixed inset-0 z-50 lg:hidden">
-      <div ref={overlayRef} className="absolute inset-0 bg-slate-900/40" onClick={onClose} aria-hidden="true" />
+      <div ref={overlayRef} className="absolute inset-0 bg-scrim" onClick={onClose} aria-hidden="true" />
       <aside
         ref={panelRef}
-        className="relative flex h-full w-72 max-w-[85vw] flex-col bg-white shadow-pop"
+        className="relative flex h-full w-72 max-w-[85vw] flex-col bg-surface shadow-pop"
         aria-label="Navigation menu"
         role="dialog"
         aria-modal="true"

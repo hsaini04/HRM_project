@@ -62,14 +62,14 @@ export function Modal({ open, onClose, title, description, size = 'md', footer, 
   if (!rendered) return null;
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center sm:p-6">
-      <div ref={overlayRef} className="absolute inset-0 bg-slate-900/40 backdrop-blur-[2px]" onClick={onClose} aria-hidden="true" />
+      <div ref={overlayRef} className="absolute inset-0 bg-scrim backdrop-blur-[2px]" onClick={onClose} aria-hidden="true" />
       <div
         ref={panelRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
         tabIndex={-1}
-        className={`relative flex max-h-[92vh] w-full flex-col overflow-clip rounded-t-2xl bg-white shadow-pop outline-none sm:rounded-2xl ${SIZES[size]}`}
+        className={`relative flex max-h-[92vh] w-full flex-col overflow-clip rounded-t-2xl bg-surface shadow-pop outline-none sm:rounded-2xl ${SIZES[size]}`}
       >
         <div className="flex items-start justify-between gap-4 border-b border-line px-5 py-4">
           <div>
@@ -102,14 +102,14 @@ export function Drawer({ open, onClose, title, description, footer, children, wi
   if (!rendered) return null;
   return createPortal(
     <div className="fixed inset-0 z-50 flex justify-end">
-      <div ref={overlayRef} className="absolute inset-0 bg-slate-900/40 backdrop-blur-[2px]" onClick={onClose} aria-hidden="true" />
+      <div ref={overlayRef} className="absolute inset-0 bg-scrim backdrop-blur-[2px]" onClick={onClose} aria-hidden="true" />
       <aside
         ref={panelRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
         tabIndex={-1}
-        className={`relative flex h-full w-full flex-col bg-white shadow-pop outline-none ${width}`}
+        className={`relative flex h-full w-full flex-col bg-surface shadow-pop outline-none ${width}`}
       >
         <div className="flex items-start justify-between gap-4 border-b border-line px-5 py-4">
           <div>

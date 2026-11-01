@@ -136,7 +136,7 @@ export function TopGapsCard({ items, title = 'Most frequent skill gaps' }) {
                 </span>
               </div>
               <div className="h-2 overflow-hidden rounded-full bg-slate-100">
-                <div className="h-full rounded-full bg-[#e0622f]" style={{ width: `${(item.employeesAffected / max) * 100}%` }} />
+                <div className="h-full rounded-full bg-(--chart-sev-2)" style={{ width: `${(item.employeesAffected / max) * 100}%` }} />
               </div>
             </li>
           ))}

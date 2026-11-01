@@ -33,11 +33,11 @@ function TrackView({ track, highlightRole }) {
           <li key={step.title} className="flex shrink-0 items-stretch gap-3">
             <div
               className={`flex w-64 flex-col rounded-xl border p-4 ${
-                current ? 'border-brand-400 bg-brand-50/60 ring-2 ring-brand-100' : step.isFocusRole ? 'border-glow-400/60 bg-glow-50/50' : 'border-line bg-white'
+                current ? 'border-brand-400 bg-brand-50/60 ring-2 ring-brand-100' : step.isFocusRole ? 'border-glow-400/60 bg-glow-50/50' : 'border-line bg-surface'
               }`}
             >
               <div className="mb-2 flex items-center justify-between gap-2">
-                <span className="tabular rounded-md bg-slate-900 px-1.5 py-0.5 text-[11px] font-semibold text-white">Step {step.level}</span>
+                <span className="tabular rounded-md bg-slate-900 px-1.5 py-0.5 text-[11px] font-semibold text-surface">Step {step.level}</span>
                 <span className="text-xs text-slate-500">{step.headcount} in demo data</span>
               </div>
               <p className="text-sm font-semibold text-slate-900">{step.title}</p>

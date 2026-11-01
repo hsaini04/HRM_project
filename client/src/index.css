@@ -1,6 +1,9 @@
 @import '@fontsource-variable/inter';
 @import 'tailwindcss';
 
+/* Dark mode follows the `data-theme` attribute on <html> (set before first paint in index.html). */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
 @theme {
   --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
@@ -24,13 +27,117 @@
 
   /* Neutral surfaces */
   --color-canvas: #f5f6f8;
+  --color-surface: #ffffff;
+  --color-raised: #ffffff;
   --color-line: #e4e7ec;
+  --color-scrim: rgb(15 23 42 / 0.4);
 
   --shadow-card: 0 1px 2px rgb(16 24 40 / 0.04), 0 1px 3px rgb(16 24 40 / 0.03);
   --shadow-pop: 0 12px 32px -8px rgb(16 24 40 / 0.18), 0 4px 8px -4px rgb(16 24 40 / 0.08);
 }
 
 @layer base {
+  :root {
+    color-scheme: light;
+
+    /* Chart chrome and the gap-severity ramp (validated per theme; status colours pass on both surfaces). */
+    --chart-grid: #e7e8ec;
+    --chart-axis: #c3c2b7;
+    --chart-tick: #6b6a65;
+    --chart-label: #334155;
+    --chart-cursor: #f3f4f7;
+    --chart-surface: #ffffff;
+    --chart-sev-1: #f0a072;
+    --chart-sev-2: #e0622f;
+    --chart-sev-3: #a63a17;
+    --scrollbar: #cbd2dc;
+  }
+
+  /*
+   * Dark theme: the same utility classes resolve to dark values. Neutrals invert, tint steps
+   * (50–200) become hue-tinted surfaces, and text steps (700–950) become light tints; the
+   * mid steps (300–600) stay as they are so solid fills keep white text readable.
+   */
+  [data-theme='dark'] {
+    color-scheme: dark;
+
+    --color-canvas: #0d1219;
+    --color-surface: #141a24;
+    --color-raised: #2c3646;
+    --color-line: #252f3d;
+    --color-scrim: rgb(2 6 12 / 0.65);
+
+    --color-slate-50: #19212d;
+    --color-slate-100: #1f2835;
+    --color-slate-200: #2a3443;
+    --color-slate-300: #3a4657;
+    --color-slate-400: #67758a;
+    --color-slate-500: #8f9bad;
+    --color-slate-600: #a9b3c2;
+    --color-slate-700: #c3cbd7;
+    --color-slate-800: #d8dee7;
+    --color-slate-900: #e9edf3;
+    --color-slate-950: #f5f7fa;
+
+    --color-brand-50: color-mix(in oklab, #3d87e0 14%, #141a24);
+    --color-brand-100: color-mix(in oklab, #3d87e0 24%, #141a24);
+    --color-brand-200: color-mix(in oklab, #3d87e0 36%, #141a24);
+    --color-brand-700: #8fbcf2;
+    --color-brand-800: #b7d3f6;
+    --color-brand-900: #dbe8fb;
+
+    --color-glow-50: color-mix(in oklab, #f5b83d 10%, #141a24);
+    --color-glow-100: color-mix(in oklab, #f5b83d 22%, #141a24);
+    --color-glow-600: #f5c869;
+
+    --color-red-50: color-mix(in oklab, #ef4444 13%, #141a24);
+    --color-red-100: color-mix(in oklab, #ef4444 22%, #141a24);
+    --color-red-700: #fca5a5;
+    --color-red-800: #fecaca;
+    --color-red-900: #fee2e2;
+
+    --color-orange-50: color-mix(in oklab, #f97316 12%, #141a24);
+    --color-orange-100: color-mix(in oklab, #f97316 20%, #141a24);
+    --color-orange-200: color-mix(in oklab, #f97316 32%, #141a24);
+    --color-orange-700: #fdba74;
+    --color-orange-800: #fed7aa;
+    --color-orange-900: #ffedd5;
+    --color-orange-950: #fff7ed;
+
+    --color-amber-50: color-mix(in oklab, #f59e0b 12%, #141a24);
+    --color-amber-100: color-mix(in oklab, #f59e0b 20%, #141a24);
+    --color-amber-800: #fcd34d;
+    --color-amber-900: #fde68a;
+
+    --color-emerald-50: color-mix(in oklab, #10b981 12%, #141a24);
+    --color-emerald-100: color-mix(in oklab, #10b981 20%, #141a24);
+    --color-emerald-700: #6ee7b7;
+    --color-emerald-800: #a7f3d0;
+
+    --color-teal-50: color-mix(in oklab, #14b8a6 12%, #141a24);
+    --color-teal-100: color-mix(in oklab, #14b8a6 20%, #141a24);
+    --color-teal-800: #99f6e4;
+
+    --color-violet-50: color-mix(in oklab, #8b5cf6 14%, #141a24);
+    --color-violet-100: color-mix(in oklab, #8b5cf6 24%, #141a24);
+    --color-violet-700: #c4b5fd;
+    --color-violet-800: #ddd6fe;
+
+    --color-rose-100: color-mix(in oklab, #f43f5e 22%, #141a24);
+    --color-rose-800: #fecdd3;
+
+    --chart-grid: #232c39;
+    --chart-axis: #3a4657;
+    --chart-tick: #9aa5b5;
+    --chart-label: #c3cbd7;
+    --chart-cursor: #1f2835;
+    --chart-surface: #141a24;
+    --chart-sev-1: #a8532c;
+    --chart-sev-2: #e0622f;
+    --chart-sev-3: #f59f72;
+    --scrollbar: #3a4657;
+  }
+
   html {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -45,14 +152,27 @@
   ::selection {
     @apply bg-brand-100 text-brand-900;
   }
+
+  /* Shadows are nearly invisible on dark surfaces, so deepen them there. */
+  [data-theme='dark'] .shadow-card,
+  [data-theme='dark'] .shadow-pop {
+    --tw-shadow-color: rgb(0 0 0 / 0.45);
+  }
+
+  /* Switching theme should be instant, not a cascade of colour transitions. */
+  .theme-switching *,
+  .theme-switching *::before,
+  .theme-switching *::after {
+    transition: none !important;
+  }
 }
 
 @layer components {
   .card {
-    @apply rounded-xl border border-line bg-white shadow-card;
+    @apply rounded-xl border border-line bg-surface shadow-card;
   }
   .input {
-    @apply block w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400
+    @apply block w-full rounded-lg border border-slate-300 bg-surface px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400
       transition-colors hover:border-slate-400 focus:border-brand-500 focus:outline-none focus:ring-3 focus:ring-brand-100
       disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-500;
   }
@@ -73,7 +193,7 @@
 
 @utility scrollbar-thin {
   scrollbar-width: thin;
-  scrollbar-color: #cbd2dc transparent;
+  scrollbar-color: var(--scrollbar) transparent;
 }
 
 /* Reduced-motion users get instant state changes; GSAP animations are skipped in JS as well. */

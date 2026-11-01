@@ -2,17 +2,20 @@ import { LoaderCircle } from 'lucide-react';
 import { forwardRef } from 'react';
 
 const VARIANTS = {
-  primary: 'bg-brand-600 text-white shadow-sm hover:bg-brand-700 active:bg-brand-800 disabled:bg-brand-300',
+  primary:
+    'bg-brand-600 text-white shadow-sm hover:bg-brand-700 active:bg-brand-800 disabled:bg-brand-300 dark:hover:bg-brand-500 dark:active:bg-brand-500 dark:disabled:bg-brand-600 dark:disabled:opacity-50',
   secondary:
-    'bg-white text-slate-700 shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50 active:bg-slate-100 disabled:text-slate-400',
+    'bg-surface text-slate-700 shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50 active:bg-slate-100 disabled:text-slate-400',
   ghost: 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 active:bg-slate-200 disabled:text-slate-400',
   subtle: 'bg-brand-50 text-brand-700 hover:bg-brand-100 active:bg-brand-200 disabled:opacity-60',
-  danger: 'bg-red-600 text-white shadow-sm hover:bg-red-700 active:bg-red-800 disabled:bg-red-300',
+  danger:
+    'bg-red-600 text-white shadow-sm hover:bg-red-700 active:bg-red-800 disabled:bg-red-300 dark:hover:bg-red-500 dark:active:bg-red-500 dark:disabled:bg-red-600 dark:disabled:opacity-50',
 };
 
 const SIZES = {
   sm: 'h-8 gap-1.5 rounded-lg px-2.5 text-xs',
   md: 'h-9 gap-2 rounded-lg px-3.5 text-sm',
+  lg: 'h-11 gap-2 rounded-xl px-5 text-[15px]',
   icon: 'size-9 justify-center rounded-lg',
   'icon-sm': 'size-8 justify-center rounded-lg',
 };

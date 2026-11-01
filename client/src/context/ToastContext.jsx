@@ -5,9 +5,9 @@ import { gsap, prefersReducedMotion } from '../animations/index.js';
 const ToastContext = createContext(null);
 
 const TONES = {
-  success: { icon: CircleCheck, className: 'text-emerald-600' },
-  error: { icon: CircleAlert, className: 'text-red-600' },
-  info: { icon: Info, className: 'text-brand-600' },
+  success: { icon: CircleCheck, className: 'text-emerald-700' },
+  error: { icon: CircleAlert, className: 'text-red-700' },
+  info: { icon: Info, className: 'text-brand-700' },
 };
 
 function Toast({ toast, onDismiss }) {
@@ -26,7 +26,7 @@ function Toast({ toast, onDismiss }) {
     <div
       ref={ref}
       role={toast.tone === 'error' ? 'alert' : 'status'}
-      className="pointer-events-auto flex w-full items-start gap-3 rounded-xl border border-line bg-white p-3.5 shadow-pop"
+      className="pointer-events-auto flex w-full items-start gap-3 rounded-xl border border-line bg-surface p-3.5 shadow-pop"
     >
       <Icon className={`mt-0.5 size-5 shrink-0 ${className}`} aria-hidden="true" />
       <div className="min-w-0 flex-1">

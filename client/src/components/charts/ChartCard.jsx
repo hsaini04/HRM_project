@@ -3,12 +3,15 @@ import { useState } from 'react';
 import { prefersReducedMotion } from '../../animations/index.js';
 import { Card, CardHeader } from '../ui/Card.jsx';
 
-// Chart chrome tokens (validated palette; text never wears a series colour).
+// Chart chrome tokens (validated palette; text never wears a series colour). The CSS variables
+// switch with the light/dark theme, so charts follow it without re-rendering.
 export const CHART = {
-  grid: '#e7e8ec',
-  axis: '#c3c2b7',
-  tick: '#6b6a65',
-  surface: '#ffffff',
+  grid: 'var(--chart-grid)',
+  axis: 'var(--chart-axis)',
+  tick: 'var(--chart-tick)',
+  label: 'var(--chart-label)',
+  cursor: 'var(--chart-cursor)',
+  surface: 'var(--chart-surface)',
   series: '#2a78d6',
   seriesSoft: '#86b6ef',
   font: 12,
@@ -39,7 +42,7 @@ export function Legend({ items }) {
 export function ChartTooltip({ active, payload, label, valueFormatter = (value) => value, labelFormatter }) {
   if (!active || !payload?.length) return null;
   return (
-    <div className="min-w-40 rounded-lg border border-line bg-white px-3 py-2 text-xs shadow-pop">
+    <div className="min-w-40 rounded-lg border border-line bg-surface px-3 py-2 text-xs shadow-pop">
       {label !== undefined && <p className="mb-1.5 font-semibold text-slate-900">{labelFormatter ? labelFormatter(label, payload) : label}</p>}
       <ul className="space-y-1">
         {payload.map((entry) => (
@@ -82,7 +85,7 @@ export function ChartCard({ title, subtitle, legend, table, height = 260, childr
                   aria-label={option.label}
                   title={option.label}
                   className={`grid size-7 place-items-center rounded-md transition-colors ${
-                    view === option.value ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-800'
+                    view === option.value ? 'bg-raised text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-800'
                   }`}
                 >
                   <option.icon className="size-4" />
