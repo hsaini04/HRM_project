@@ -271,7 +271,7 @@ export default function SkillGapsPage() {
                               ))}
                             </ul>
                           ) : (
-                            <span className="text-xs text-slate-400">No matching programme yet</span>
+                            <span className="text-xs text-slate-500">No matching programme yet</span>
                           )}
                         </td>
                       </tr>

@@ -74,6 +74,13 @@ Status is never set by hand; it is derived from progress and the due date:
 | progress > 0 % | In Progress |
 | otherwise | Not Started |
 
+### Light and dark theme
+
+The interface has a light and a dark theme. It follows the operating system setting until the user
+picks one with the sun/moon toggle (in the top bar, and on the demo access page); the choice is then
+saved in the browser (`localStorage`) and applied before the first paint, so pages do not flash.
+Charts read their grid, axis and label colours from CSS variables, so they switch with the theme.
+
 ## Tech stack
 
 | Layer | Technology |
@@ -250,6 +257,10 @@ status 400 (validation / bad id), 403 (role not allowed), 404 (not found) or 409
   skill gaps and training assignments also checked as Manager and Employee; dashboard, assignments and
   the navigation drawer checked at a 375 px phone width. Flows exercised: employee search, programme
   create/validate/delete, progress updates (status and KPIs recalculating), persona switching.
+- **Theme and contrast (Chromium, 1024 px):** a scripted text-contrast check (WCAG AA: 4.5:1, or 3:1
+  for large text) on every route in both themes, with no failures apart from a disabled pagination
+  button; every page and the competency-assessment drawer also reviewed visually in the dark theme.
+  Chart axis labels checked for clipping and wrapping.
 
 Not done: cross-browser testing beyond Chromium, screen-reader testing, load testing or a security review.
 

@@ -20,7 +20,9 @@ export const CHART = {
 export const chartAnimation = () => !prefersReducedMotion();
 
 export const axisProps = {
-  tick: { fill: CHART.tick, fontSize: CHART.font },
+  // Recharts measures tick labels with `style` when deciding where to wrap; without the font size there
+  // it measures at 16px and breaks labels that actually fit.
+  tick: { fill: CHART.tick, fontSize: CHART.font, style: { fontSize: CHART.font } },
   tickLine: false,
   axisLine: { stroke: CHART.axis },
 };

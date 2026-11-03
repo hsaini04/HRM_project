@@ -249,7 +249,7 @@ export default function CareerPathsPage() {
       <div data-reveal className="mt-8 mb-4 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <h2 className="text-lg font-semibold text-slate-900">{role === 'employee' ? 'My development plan' : 'Individual development plans'}</h2>
-          <p className="text-sm text-slate-500">Goals linked to competencies, mentoring and recommended training.</p>
+          <p className="text-sm text-slate-600">Goals linked to competencies, mentoring and recommended training.</p>
         </div>
         {role === 'manager' && (
           <SegmentedControl

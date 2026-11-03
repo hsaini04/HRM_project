@@ -15,7 +15,7 @@ function NavList({ onNavigate }) {
     <nav aria-label="Main navigation" className="flex-1 space-y-5 overflow-y-auto px-3 py-4">
       {navigation.map((group) => (
         <div key={group.section}>
-          <p className="mb-1.5 px-3 text-[11px] font-semibold tracking-wider text-slate-400 uppercase">{group.section}</p>
+          <p className="mb-1.5 px-3 text-[11px] font-semibold tracking-wider text-slate-500 uppercase">{group.section}</p>
           <ul className="space-y-0.5">
             {group.items.map((item) => (
               <li key={item.to}>

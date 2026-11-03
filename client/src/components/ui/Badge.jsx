@@ -6,7 +6,7 @@ const TONES = {
   success: 'bg-emerald-50 text-emerald-700 ring-emerald-600/20',
   warning: 'bg-amber-50 text-amber-800 ring-amber-600/25',
   danger: 'bg-red-50 text-red-700 ring-red-600/20',
-  glow: 'bg-glow-50 text-glow-600 ring-glow-400/40',
+  glow: 'bg-glow-50 text-glow-700 ring-glow-400/40',
 };
 
 export function Badge({ tone = 'neutral', className = '', icon: Icon, children, title }) {

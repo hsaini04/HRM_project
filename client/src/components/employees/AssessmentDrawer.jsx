@@ -91,7 +91,7 @@ export function AssessmentDrawer({ open, onClose, employee, items = [], onSaved 
                               title={LEVEL_LABELS[level]}
                               onClick={() => setLevels((current) => ({ ...current, [item.competency._id]: level }))}
                               className={`h-7 min-w-9 rounded-md px-2 text-xs font-semibold transition-colors ${
-                                value === level ? 'bg-raised text-brand-700 shadow-sm ring-1 ring-brand-200' : 'text-slate-600 hover:text-slate-900'
+                                value === level ? 'bg-raised text-brand-700 shadow-sm ring-1 ring-brand-200 dark:bg-brand-100 dark:ring-brand-500/60' : 'text-slate-600 hover:text-slate-900'
                               }`}
                             >
                               {level}

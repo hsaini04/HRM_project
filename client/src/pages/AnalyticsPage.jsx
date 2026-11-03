@@ -63,7 +63,7 @@ function CompletionByDepartment({ rows }) {
       height={260}
     >
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={data} layout="vertical" margin={{ top: 4, right: 52, bottom: 4, left: 8 }} barCategoryGap="26%">
+        <BarChart data={data} layout="vertical" margin={{ top: 4, right: 68, bottom: 4, left: 8 }} barCategoryGap="26%">
           <CartesianGrid horizontal={false} stroke={CHART.grid} />
           <XAxis type="number" allowDecimals={false} {...axisProps} />
           <YAxis type="category" dataKey="name" width={140} {...axisProps} axisLine={false} />

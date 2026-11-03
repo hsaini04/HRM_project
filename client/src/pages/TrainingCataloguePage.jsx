@@ -197,7 +197,7 @@ export default function TrainingCataloguePage() {
         </Card>
       ) : (
         <>
-          <p className="mb-3 text-sm text-slate-500" aria-live="polite">
+          <p className="mb-3 text-sm text-slate-600" aria-live="polite">
             {loading ? 'Updating…' : `${data.meta.total} programme${data.meta.total === 1 ? '' : 's'}`}
           </p>
           <div className="grid gap-4 md:grid-cols-2 2xl:grid-cols-3">

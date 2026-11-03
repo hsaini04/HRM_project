@@ -24,6 +24,7 @@
   --color-glow-100: #fdebc4;
   --color-glow-400: #f5b83d;
   --color-glow-600: #b7790b;
+  --color-glow-700: #8f5d06;
 
   /* Neutral surfaces */
   --color-canvas: #f5f6f8;
@@ -89,6 +90,7 @@
     --color-glow-50: color-mix(in oklab, #f5b83d 10%, #141a24);
     --color-glow-100: color-mix(in oklab, #f5b83d 22%, #141a24);
     --color-glow-600: #f5c869;
+    --color-glow-700: #f5c869;
 
     --color-red-50: color-mix(in oklab, #ef4444 13%, #141a24);
     --color-red-100: color-mix(in oklab, #ef4444 22%, #141a24);

@@ -41,7 +41,7 @@ function ExpectedLevel({ level }) {
 
 function LevelCell({ current, required }) {
   if (current === null || current === undefined) {
-    return <span className="inline-grid size-8 place-items-center rounded-md bg-slate-50 text-xs text-slate-400 ring-1 ring-slate-200 ring-inset">–</span>;
+    return <span className="inline-grid size-8 place-items-center rounded-md bg-slate-50 text-xs text-slate-500 ring-1 ring-slate-200 ring-inset">–</span>;
   }
   const gap = required - current;
   const tone =
