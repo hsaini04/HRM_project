@@ -2,7 +2,6 @@ import { lazy, Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router';
 import { AppLayout, RequirePermission } from './components/layout/AppLayout.jsx';
 import { PageSkeleton } from './components/ui/index.js';
-import { useDemo } from './context/DemoContext.jsx';
 import DemoAccessPage from './pages/DemoAccessPage.jsx';
 
 const DashboardPage = lazy(() => import('./pages/DashboardPage.jsx'));
@@ -16,16 +15,13 @@ const AnalyticsPage = lazy(() => import('./pages/AnalyticsPage.jsx'));
 const CareerPathsPage = lazy(() => import('./pages/CareerPathsPage.jsx'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage.jsx'));
 
-function HomeRedirect() {
-  const { session } = useDemo();
-  return <Navigate to={session ? '/dashboard' : '/demo-access'} replace />;
-}
-
 export default function App() {
   return (
     <Suspense fallback={<PageSkeleton />}>
       <Routes>
-        <Route path="/" element={<HomeRedirect />} />
+        {/* The site address always opens the role picker, even when a demo session is saved in this browser;
+            the saved role is preselected there and marked "Current". Deep links still open directly. */}
+        <Route path="/" element={<Navigate to="/demo-access" replace />} />
         <Route path="/demo-access" element={<DemoAccessPage />} />
         <Route path="/login" element={<Navigate to="/demo-access" replace />} />
         <Route element={<AppLayout />}>
