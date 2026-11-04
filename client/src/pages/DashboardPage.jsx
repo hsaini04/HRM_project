@@ -120,6 +120,40 @@ function GapsByDepartmentChart({ data }) {
   );
 }
 
+/** CA-1 workforce shares next to the demo office's current headcount (from the job-role counts). */
+function WorkforceMixTable({ mix, jobRoles }) {
+  if (!mix?.length) return null;
+  const byDepartment = (jobRoles || []).reduce((acc, role) => ({ ...acc, [role.department]: (acc[role.department] || 0) + role.headcount }), {});
+  const total = Object.values(byDepartment).reduce((sum, count) => sum + count, 0);
+  const rows = mix.map((item) => ({ ...item, count: item.departments.reduce((sum, name) => sum + (byDepartment[name] || 0), 0) }));
+
+  return (
+    <div className="mt-5 overflow-x-auto rounded-lg ring-1 ring-line">
+      <table className="w-full text-sm">
+        <caption className="sr-only">CA-1 workforce shares compared with the demo office</caption>
+        <thead className="table-head">
+          <tr>
+            <th className="px-3 py-2 text-left">CA-1 employee category</th>
+            <th className="px-3 py-2 text-right">CA-1 share (est.)</th>
+            <th className="px-3 py-2 text-right">Demo office</th>
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-line">
+          {rows.map((row) => (
+            <tr key={row.category}>
+              <td className="px-3 py-2 text-slate-700">{row.category}</td>
+              <td className="tabular px-3 py-2 text-right text-slate-700">{row.share}</td>
+              <td className="tabular px-3 py-2 text-right text-slate-700">
+                {row.count} <span className="text-slate-500">({total ? Math.round((row.count / total) * 1000) / 10 : 0}%)</span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 function OrgDashboard() {
   const { role, session } = useDemo();
   const { meta } = useMeta();
@@ -222,8 +256,9 @@ function OrgDashboard() {
               <p className="text-sm font-semibold text-slate-900">Planning context · {meta.ca1Context.label}</p>
               <p className="mt-1 text-sm text-slate-600">
                 CA-1 estimated the real Gurugram office at {meta.ca1Context.currentWorkforce}, with a possible near-term need of{' '}
-                {meta.ca1Context.nearTermRequirement} (indicative gap {meta.ca1Context.planningGap}). These estimates are context only — this
-                prototype holds {kpis.employees} fictional demo records, and every metric above is calculated from those records.
+                {meta.ca1Context.nearTermRequirement} (indicative gap {meta.ca1Context.planningGap}). The demo office is sized to the CA-1
+                working figure of {meta.ca1Context.workingFigure} and split in the CA-1 workforce shares, but its {kpis.employees} records are
+                fictional, and every metric above is calculated from those records.
               </p>
             </div>
             <dl className="grid shrink-0 grid-cols-3 gap-4 text-center">
@@ -239,6 +274,7 @@ function OrgDashboard() {
               ))}
             </dl>
           </div>
+          <WorkforceMixTable mix={meta.ca1Context.workforceMix} jobRoles={meta.jobRoles} />
         </Card>
       )}
     </div>

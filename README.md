@@ -25,6 +25,23 @@ The CA-1 field study identified three HR challenges for the Gurugram office:
 | Near-term requirement | + 15–25 employees |
 | Planning gap | ≈ 18–23 employees |
 
+### How the demo office follows CA-1
+
+The demo dataset is sized and shaped by the CA-1 workforce profile, but every person in it is
+fictional. It holds **102 employees** (the working figure CA-1 uses for its gap analysis), split by
+the mid-points of the CA-1 share ranges, normalised to 100% because the ranges as printed add up to
+87–98%. CA-1 groups field service with customer service, so that category covers two departments here.
+
+| CA-1 employee category | CA-1 share (est.) | Demo office |
+| --- | --- | --- |
+| Sales & Business Development | 18–20% | 21 (20.6%) |
+| Lighting Design / Applications / Engineering | 27–30% | 31 (30.4%) |
+| Customer Service / Field / Project Support | 14–16% | 17 (16.7%): 8 system sales & field service, 9 customer service & project support |
+| IT / HR / Finance / Administration | 18–20% | 21 (20.6%) |
+| Management / Functional Leadership | 10–12% | 12 (11.8%) |
+
+The organisation-wide dashboard shows the same comparison, calculated from the live records.
+
 SkillBridge addresses challenge 3 directly and supports 1 and 2 by making skill gaps, training
 progress and career paths visible, so specialists can be developed internally.
 
@@ -138,8 +155,9 @@ npm run seed
 
 The seed **clears and recreates** the demo collections using a fixed random seed, so every run
 produces the same fictional records (dates are relative to the day you run it). Expected output:
-24 job roles, 27 competencies, 23 employees, 328 competency ratings (86 gaps, 15 priority),
-18 programmes, 51 enrolments (20 completed, 14 in progress, 9 not started, 8 overdue) and 8 career plans.
+33 job roles, 27 competencies, 102 employees (4 not yet assessed), 1,432 competency ratings
+(412 gaps, 70 priority), 18 programmes, 253 enrolments (104 completed, 64 in progress, 43 not
+started, 42 overdue), 12 career plans and 587 activity entries.
 
 You can skip this step on a new database: when the API starts and the default sign-in accounts are
 missing, it seeds an **empty** database with the full demo dataset. If the database already holds

@@ -162,6 +162,18 @@ export const jobRoles = [
     summary: 'Manages key customer and specifier relationships and grows account opportunities.',
     requirements: 'ps3 co4 ct3 qd3 tla3 sell4 scope3 demo3 comm4 stk4 xfc3 tpm3 adapt3 own4',
   },
+  {
+    title: 'Sales Manager – Lighting',
+    department: SALES,
+    summary: 'Leads a sales team for lighting-control and shading projects, owns its pipeline and coaches account managers.',
+    requirements: 'ps4 co4 ct4 qd3 tla3 sell4 scope4 demo3 comm4 stk4 xfc4 tpm4 adapt3 own4 lead3',
+  },
+  {
+    title: 'Sales Coordinator',
+    department: SALES,
+    summary: 'Coordinates quotations, orders and commercial documentation between customers, sales and project teams.',
+    requirements: 'ps3 co3 ct3 qd3 tla3 sell2 proc3 comm3 stk3 xfc4 tpm4 adapt3 own3',
+  },
 
   // IT, HR, Finance & Administration
   {
@@ -169,6 +181,18 @@ export const jobRoles = [
     department: SUPPORT,
     summary: 'Supports workforce planning, recruitment, learning and employee relations for the office.',
     requirements: 'ps3 co3 ct4 qd3 tla2 proc4 comm4 stk4 xfc3 tpm3 adapt3 own4 lead2',
+  },
+  {
+    title: 'Talent Acquisition Specialist',
+    department: SUPPORT,
+    summary: 'Sources and screens candidates for specialist technical and customer-facing roles and runs the selection process.',
+    requirements: 'ps3 co3 ct4 qd3 tla3 proc4 comm4 stk4 xfc3 tpm4 adapt3 own4',
+  },
+  {
+    title: 'IT Support Engineer',
+    department: SUPPORT,
+    summary: 'Supports laptops, accounts, network access and collaboration tools for office users.',
+    requirements: 'ps3 co3 ct3 qd3 tla3 sec3 net3 proc3 comm3 stk2 xfc3 tpm3 adapt3 own3',
   },
   {
     title: 'IT Security Specialist',
@@ -190,6 +214,36 @@ export const jobRoles = [
   },
 
   // Management & Functional Leadership
+  {
+    title: 'Office Head – Gurugram',
+    department: MGMT,
+    summary: 'Sets business direction and priorities for the Gurugram office and coordinates with global teams.',
+    requirements: 'ps4 co4 ct4 qd4 tla3 sell3 comm4 stk4 xfc4 tpm4 adapt4 own4 lead4',
+  },
+  {
+    title: 'System Sales Engineering Manager',
+    department: MGMT,
+    summary: 'Leads system sales engineering and field service, including demonstrations and customer technical training.',
+    requirements: 'ps4 co4 ct4 qd4 tla4 lcs4 cfg4 demo4 ts3 comm4 stk4 xfc4 tpm4 adapt4 own4 lead4',
+  },
+  {
+    title: 'HR & Talent Acquisition Manager',
+    department: MGMT,
+    summary: 'Leads workforce planning, recruitment, learning and employee relations for the office.',
+    requirements: 'ps4 co4 ct4 qd3 tla3 proc4 comm4 stk4 xfc4 tpm4 adapt4 own4 lead4',
+  },
+  {
+    title: 'IT & Infrastructure Manager',
+    department: MGMT,
+    summary: 'Leads IT support, security and infrastructure for the office.',
+    requirements: 'ps4 co3 ct4 qd4 tla4 sec4 net4 proc4 comm4 stk3 xfc4 tpm4 adapt4 own4 lead4',
+  },
+  {
+    title: 'Finance & Administration Manager',
+    department: MGMT,
+    summary: 'Leads finance, accounting and office administration.',
+    requirements: 'ps4 co3 ct4 qd4 tla3 proc4 comm4 stk3 xfc4 tpm4 adapt3 own4 lead4',
+  },
   {
     title: 'Design & Applications Manager',
     department: MGMT,

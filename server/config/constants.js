@@ -57,4 +57,23 @@ export const CA1_CONTEXT = {
   currentWorkforce: '≈100–105 employees',
   nearTermRequirement: '≈15–25 additional employees',
   planningGap: '≈18–23 employees',
+  workingFigure: 102,
+  // CA-1 Table "Workforce Profile": approximate share of each employee category. The demo office is
+  // sized to the working figure and split by these ranges' mid-points, normalised to 100% (the
+  // ranges as printed add up to 87–98%). CA-1 groups field service with customer service.
+  workforceMix: [
+    { category: 'Sales & Business Development', share: '18–20%', departments: ['Sales & Business Development'] },
+    {
+      category: 'Lighting Design / Applications / Engineering',
+      share: '27–30%',
+      departments: ['Lighting Design, Applications & Engineering'],
+    },
+    {
+      category: 'Customer Service / Field / Project Support',
+      share: '14–16%',
+      departments: ['System Sales Engineering & Field Service', 'Customer Service & Project Support'],
+    },
+    { category: 'IT / HR / Finance / Administration', share: '18–20%', departments: ['IT, HR, Finance & Administration'] },
+    { category: 'Management / Functional Leadership', share: '10–12%', departments: ['Management & Functional Leadership'] },
+  ],
 };

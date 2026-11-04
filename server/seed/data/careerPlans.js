@@ -109,4 +109,52 @@ export const careerPlans = [
       { title: 'Co-deliver a demonstration with system sales engineering', competency: 'demo', offset: 40, status: 'Not Started' },
     ],
   },
+  {
+    employee: 'DEMO-1055',
+    targetRole: 'Senior Lighting Design Specialist',
+    mentor: 'DEMO-1053',
+    reviewIn: 70,
+    notes: 'Consistent designer; needs wider controls and daylighting depth before taking on larger projects.',
+    trainings: ['Advanced Daylighting & Shading Analysis', 'Lighting-Control & Shading Concepts for Project Design'],
+    goals: [
+      { title: 'Complete a daylighting and shading study for one project', competency: 'lcs', offset: 60, status: 'In Progress' },
+      { title: 'Review two designs prepared by junior designers', competency: 'lead', offset: 95, status: 'Not Started' },
+    ],
+  },
+  {
+    employee: 'DEMO-1066',
+    targetRole: 'Senior Applications Engineer',
+    mentor: 'DEMO-1064',
+    reviewIn: 75,
+    notes: 'Strengthen configuration and commissioning depth for larger control systems.',
+    trainings: ['Control-System Configuration & Commissioning Lab', 'Networking Essentials for Smart-Building Systems'],
+    goals: [
+      { title: 'Commission one multi-floor control system with minimal support', competency: 'cfg', offset: 80, status: 'In Progress' },
+      { title: 'Document a network design for a smart-building project', competency: 'net', offset: 50, status: 'Not Started' },
+    ],
+  },
+  {
+    employee: 'DEMO-1036',
+    targetRole: 'Sales Manager – Lighting',
+    mentor: 'DEMO-1033',
+    reviewIn: 90,
+    notes: 'Strong account relationships; preparing for team leadership and larger project pursuits.',
+    trainings: ['Mentoring & Coaching for Senior Specialists', 'Technical Product Demonstration Skills'],
+    goals: [
+      { title: 'Coach two business development executives through a full sales cycle', competency: 'lead', offset: 100, status: 'In Progress' },
+      { title: 'Lead the scope for one large commercial pursuit', competency: 'scope', offset: 70, status: 'Not Started' },
+    ],
+  },
+  {
+    employee: 'DEMO-1087',
+    targetRole: 'HR Business Partner',
+    mentor: 'DEMO-1003',
+    reviewIn: 85,
+    notes: 'Building on recruitment for niche technical roles (CA-1 challenge 2) towards wider HR partnering.',
+    trainings: ['Cross-Functional Project Coordination', 'Client Communication & Presentation Skills'],
+    goals: [
+      { title: 'Build a competency-based interview guide for lighting-design hiring', competency: 'proc', offset: 45, status: 'In Progress' },
+      { title: 'Partner with one department head on a quarterly workforce review', competency: 'stk', offset: 90, status: 'Not Started' },
+    ],
+  },
 ];
