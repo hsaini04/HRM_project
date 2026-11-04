@@ -158,11 +158,16 @@ function RoleOption({ persona, checked, current, onSelect }) {
         </span>
         <span className="mt-0.5 block truncate text-[13px] text-slate-500">
           {missing ? (
-            <span className="text-red-700">Persona not found — run the seed script.</span>
+            <span className="text-red-700">Demo account missing — restart the API server to recreate it.</span>
           ) : (
             `${persona.employee.name} · ${persona.employee.jobTitle}`
           )}
         </span>
+        {!missing && (
+          <span className="mt-1.5 inline-flex items-center gap-1.5 rounded-md bg-slate-100 px-1.5 py-0.5 text-[11px] text-slate-600">
+            Sign-in ID <span className="font-mono font-semibold text-slate-800">{persona.employee.employeeCode}</span>
+          </span>
+        )}
       </span>
       <span
         className={`grid size-5 shrink-0 place-items-center rounded-full border-2 transition-colors ${
@@ -261,7 +266,8 @@ export default function DemoAccessPage() {
               </div>
             ) : (
               <form ref={formRef} onSubmit={submit} className="mt-7">
-                <fieldset>
+                {/* Fieldsets default to min-width: min-content, which lets long persona titles push the cards off-screen. */}
+                <fieldset className="min-w-0">
                   <legend className="mb-2.5 text-sm font-medium text-slate-700">Continue as</legend>
                   <div className="space-y-2">
                     {status === 'loading'

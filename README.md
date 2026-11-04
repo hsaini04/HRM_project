@@ -45,11 +45,15 @@ progress and career paths visible, so specialists can be developed internally.
 
 ### Roles (demo context, not authentication)
 
-| Role | Persona (fictional) | Can |
-| --- | --- | --- |
-| HR / Admin | Ananya Rao | Everything: employees, competencies, programmes, assignments, plans, analytics. |
-| Manager | Meera Kapoor (Design & Applications Manager) | View the whole office; assess, assign and plan for **direct reports** only. |
-| Employee | Priya Nair (Lighting Design Specialist) | View own profile, gaps, training and plan; update own progress and goal status. |
+| Role | Default sign-in ID | Persona (fictional) | Can |
+| --- | --- | --- | --- |
+| HR / Admin | `DEMO-1003` | Ananya Rao | Everything: employees, competencies, programmes, assignments, plans, analytics. |
+| Manager | `DEMO-1001` | Meera Kapoor (Design & Applications Manager) | View the whole office; assess, assign and plan for **direct reports** only. |
+| Employee | `DEMO-1007` | Priya Nair (Lighting Design Specialist) | View own profile, gaps, training and plan; update own progress and goal status. |
+
+To sign in, pick the role on the demo access page; each card shows its sign-in ID and no password
+is needed. The API creates these three accounts on startup if they are missing (see
+[Seed the demo data](#3-seed-the-demo-data)), so the sign-in page works on a fresh database.
 
 The selected role is sent with each request in `X-Demo-Role` / `X-Demo-Employee` headers and
 the API enforces the same rules (403 for actions outside the role). This is a demo switch, **not**
@@ -123,6 +127,7 @@ cp client/.env.example client/.env
 | `server/.env` | `MONGODB_URI` | `mongodb://127.0.0.1:27017/lutron_skillbridge` | Database connection (use your own Atlas URI if not local) |
 | `server/.env` | `CLIENT_URL` | `http://localhost:5173` | Allowed CORS origin(s), comma-separated |
 | `server/.env` | `NODE_ENV` | `development` | Environment name |
+| `server/.env` | `AUTO_SEED` | `true` | Create the default demo accounts on startup when they are missing; `false` turns this off |
 | `client/.env` | `VITE_API_URL` | *(empty)* | Only needed if the API is on another origin; in development Vite proxies `/api` to port 5050 |
 
 ### 3. Seed the demo data
@@ -135,6 +140,11 @@ The seed **clears and recreates** the demo collections using a fixed random seed
 produces the same fictional records (dates are relative to the day you run it). Expected output:
 24 job roles, 27 competencies, 23 employees, 328 competency ratings (86 gaps, 15 priority),
 18 programmes, 51 enrolments (20 completed, 14 in progress, 9 not started, 8 overdue) and 8 career plans.
+
+You can skip this step on a new database: when the API starts and the default sign-in accounts are
+missing, it seeds an **empty** database with the full demo dataset. If the database already holds
+records, it only adds the missing accounts and deletes nothing. Run `npm run seed` whenever you want
+a clean reset.
 
 ### 4. Run in development
 
